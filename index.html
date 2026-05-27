@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>eZuite</h2>
+        </div>
+
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Employees</li>
+            <li>Attendance</li>
+            <li>Payroll</li>
+            <li>Files</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Employee Management</h2>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search employee..."
+            >
+        </div>
+
+        <!-- Status Tabs -->
+        <div class="tabs">
+            <button class="tab active">Draft</button>
+            <button class="tab">Active</button>
+            <button class="tab">Inactive</button>
+            <button class="tab">Deleted</button>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">First Name ▲▼</th>
+                        <th onclick="sortTable(1)">Last Name ▲▼</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeBody">
+                    <!-- Data loaded from JavaScript -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Pagination UI -->
+        <div id="pagination" class="pagination">
+            <button>&lt;</button>
+            <button class="active-page">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>&gt;</button>
+        </div>
+
+    </main>
+
+</div>
+
+<!-- Employee Details Modal -->
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <div id="employeeDetails"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
